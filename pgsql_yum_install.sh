@@ -9,7 +9,7 @@
 
 # Define Variables
 
-version="9.2"
+version="9.6"
 
 # default postgres data dir,so don't modify this !!
 defaultDir=/var/lib/pgsql/$version/data
@@ -20,7 +20,7 @@ yourDir=/data/pg_data
 # if you do not kown what's your release or arch
 #  type 'cat /etc/redhat_release' ,get your os release
 #  type 'uname -m' ,get your os arch
-rpm=http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-centos92-9.2-6.noarch.rpm
+rpm=https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-6-x86_64/pgdg-oraclelinux96-9.6-3.noarch.rpm
 
 #Check postgres installed
 rpm -qa postgres
@@ -62,4 +62,4 @@ fi
 sudo chkconfig postgres-$version on
 
 #modify password
-#sudo -u postgres psql -d postgres -c "alter user postgres with password '123456'"
+sudo -u postgres psql -d postgres -c "alter user postgres with password '123456'"
